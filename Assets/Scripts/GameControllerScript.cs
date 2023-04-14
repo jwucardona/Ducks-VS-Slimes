@@ -13,7 +13,11 @@ public class GameControllerScript : MonoBehaviour
     public List<TileScript> temp = new List<TileScript>();
     public List<TileScript> path = new List<TileScript>();
     //public TurnControl tc = new TurnControl();
-    
+
+    public Camera cam;
+    private Material newColor;
+    TileScript tileTarget;
+
     private static GameControllerScript theGameController;
 
     public static GameControllerScript getInstance()
@@ -51,6 +55,29 @@ System.Random rnd = new System.Random();
     {
         if(start != null && end != null){
             computerPath(start, end);
+        }
+
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            tiles[i].setColor(Color.red * 2);
+            if (tileTarget != null)
+            {
+                tileTarget.setColor(Color.blue * 2);
+            }
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            RaycastHit hit;
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out hit, 100.0f))
+            {
+                if (hit.transform != null && hit.transform.tag == "Tile")
+                {
+                    tileTarget = hit.transform.gameObject.GetComponent<TileScript>();
+                }
+            }
         }
     }
 
