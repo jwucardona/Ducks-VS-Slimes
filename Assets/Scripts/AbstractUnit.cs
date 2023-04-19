@@ -16,6 +16,16 @@ public class AbstractUnit : MonoBehaviour
         this.health = hp;
         this.damage = dmg;
     }
+
+    public void TakeDamage(int dmg)
+    {
+        health -= dmg;
+        if (health <= 0)
+        {
+            health = 0;
+            Destroy(gameObject);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
