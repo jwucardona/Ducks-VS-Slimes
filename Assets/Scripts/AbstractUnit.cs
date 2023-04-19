@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class AbstractUnit : MonoBehaviour
 {
+    // Declare the variables
+    public int health;
+    public int damage;
+
+
+    // Constructor
+    public AbstractUnit(int hp, int dmg)
+    {
+        // Set the default values
+        this.health = hp;
+        this.damage = dmg;
+    }
     // Start is called before the first frame update
     void Start()
     {
