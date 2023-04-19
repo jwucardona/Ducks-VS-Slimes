@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    int curHealth = 5;
+    //method to take damage
+    public void damage(int amount)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        curHealth -= amount;
+        if(curHealth == 0)
+        {
+            //destroy(GameObject);
+        }
     }
 }
