@@ -3461,6 +3461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c37c937039a5fd4ebf266325e57b441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  duckDefaultPrefab: {fileID: 136300, guid: 47eccfdaaa8490246bb90d54bab6ccbd, type: 3}
   temp: []
   path: []
   cam: {fileID: 0}

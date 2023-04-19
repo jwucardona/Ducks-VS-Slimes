@@ -10,6 +10,8 @@ public class GameControllerScript : MonoBehaviour
 
     private TileScript start, end;
 
+    public GameObject duckDefaultPrefab;
+
     public List<TileScript> temp = new List<TileScript>();
     public List<TileScript> path = new List<TileScript>();
     //public TurnControl tc = new TurnControl();
@@ -78,6 +80,12 @@ System.Random rnd = new System.Random();
                     tileTarget = hit.transform.gameObject.GetComponent<TileScript>();
                 }
             }
+        }
+        
+        if (tileTarget != null && Input.GetKeyDown(KeyCode.Return))
+        {
+            GameObject newObject = Instantiate(duckDefaultPrefab, new Vector3(tileTarget.transform.position.x, 1f, tileTarget.transform.position.z), transform.rotation * Quaternion.Euler(270f, 90f, 0f));
+            tileTarget = null;
         }
     }
 
