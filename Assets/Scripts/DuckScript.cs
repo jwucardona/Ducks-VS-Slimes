@@ -5,7 +5,6 @@ using UnityEngine;
 public class DuckScript : MonoBehaviour
 {
     public GameObject bullet;
-    bool shotFired;
     public Transform beakEnd;
 
     // Start is called before the first frame update
@@ -26,18 +25,6 @@ public class DuckScript : MonoBehaviour
             Fire();
             timer = 0;
         }
-
-        if (shotFired)
-        {
-            destroyShot();
-        }
-    }
-
-    IEnumerator destroyShot()
-    {
-        yield return new WaitForSeconds(5f);
-        Destroy(shot);
-        shotFired = false;
     }
 
     GameObject shot;
@@ -45,6 +32,5 @@ public class DuckScript : MonoBehaviour
     {
         shot = Instantiate(bullet, beakEnd.position, beakEnd.rotation);
         shot.GetComponent<Rigidbody>().AddForce(beakEnd.transform.forward * 500);
-        shotFired = true;
     }
 }
