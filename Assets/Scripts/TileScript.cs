@@ -9,6 +9,8 @@ public class TileScript : MonoBehaviour
     TileScript backPointer;
     bool hasVisited;
     bool taken = false;
+    [SerializeField] GameObject lilyPad;
+    [SerializeField] GameObject flower;
 
     private GameControllerScript theGameController = GameControllerScript.getInstance();
 
@@ -76,7 +78,18 @@ public class TileScript : MonoBehaviour
     }
    
     void Start(){
-        
+        // rotates the lily pad at a random angle on its y axis
+        lilyPad.transform.Rotate(0, Random.Range(0, 360), 0);
+        // sets the visibility of the lily pad flower to false by random chance and also rotates it at a random angle on its y axis
+        if (Random.Range(0, 2) == 1)
+        {
+            flower.SetActive(true);
+            flower.transform.Rotate(0, Random.Range(0, 360), 0);
+        }
+        else
+        {
+            flower.SetActive(false);
+        }
     }
     private void OnMouseEnter(){
         //theGameController.setEnd();
