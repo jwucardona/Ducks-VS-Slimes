@@ -16,6 +16,8 @@ public class TileScript : MonoBehaviour
 
     public GameObject[] borders;
 
+    private Color color;
+
     public List<TileScript> getNeighbors()
     {
         return neighbors;
@@ -76,8 +78,15 @@ public class TileScript : MonoBehaviour
         borders[2].GetComponent<MeshRenderer>().material.SetColor("_BaseColor", theColor);
         borders[3].GetComponent<MeshRenderer>().material.SetColor("_BaseColor", theColor);
     }
+
+    public Color getColor()
+    {
+        return color;
+    }
    
     void Start(){
+        color = borders[0].GetComponent<Renderer>().material.GetColor("_BaseColor");
+
         // rotates the lily pad at a random angle on its y axis
         lilyPad.transform.Rotate(0, Random.Range(0, 360), 0);
         // sets the visibility of the lily pad flower to false by random chance and also rotates it at a random angle on its y axis

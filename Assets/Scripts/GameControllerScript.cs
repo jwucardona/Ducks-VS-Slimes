@@ -61,7 +61,7 @@ System.Random rnd = new System.Random();
 
         for (int i = 0; i < tiles.Length; i++)
         {
-            tiles[i].setColor(Color.red * 2);
+            tiles[i].setColor(tiles[i].getColor());
             if (tileTarget != null)
             {
                 tileTarget.setColor(Color.blue * 2);
