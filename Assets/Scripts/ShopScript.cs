@@ -31,7 +31,7 @@ public class ShopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sunCounter.text = currencyClick.score.ToString();
+        sunCounter.text = SpawnCurrency.money.ToString();
 
         BSPanel.SetActive(true);
         BDPanel.SetActive(true);

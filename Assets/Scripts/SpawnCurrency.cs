@@ -39,6 +39,21 @@ public class SpawnCurrency : MonoBehaviour
             Destroy(co.gameObject);
         }
     }
+     private Ray ray; // The ray
+     private RaycastHit hit; // What we hit
+     public static int money = 100;
+     void Update()
+     {
+         ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Ray will be sent out from where your mouse is located    
+         if(Physics.Raycast(ray,out hit, 1000.0f) && Input.GetMouseButtonDown (0)) // On left click we send down a ray
+         {
+            if(hit.collider.gameObject.tag == "WaterDrop")
+            {
+              Destroy (hit.collider.gameObject); 
+              money+=20;
+            }
+         }
+     }
     /*public GameObject currency;
     // Start is called before the first frame update
     void Start()
