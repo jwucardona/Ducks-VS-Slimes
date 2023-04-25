@@ -144,6 +144,7 @@ System.Random rnd = new System.Random();
                             if (hit.transform.position.x == ducks[i].transform.position.x && hit.transform.position.z == ducks[i].transform.position.z){
                                 Destroy(ducks[i]);
                                 ducks.RemoveAt(i);
+                                hit.transform.gameObject.GetComponent<TileScript>().setTaken(false);
                                 removeDefense = false;
                                 break;
                             }
