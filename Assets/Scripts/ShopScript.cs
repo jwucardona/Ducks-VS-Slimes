@@ -44,7 +44,7 @@ public class ShopScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sunCounter.text = currencyClick.score.ToString();
+        sunCounter.text = SpawnCurrency.money.ToString();
 
         BSPanel.SetActive(true);
         BDPanel.SetActive(true);
@@ -73,32 +73,32 @@ public class ShopScript : MonoBehaviour
         }
 
         if(checkBSTimer()){
-            if(currencyClick.score >= 100){
+            if(SpawnCurrency.money >= 100){
                 BSPanel.SetActive(false);
             }
         }
         if(checkBDTimer()){
-            if(currencyClick.score >= 50){
+            if(SpawnCurrency.money >= 50){
                 BDPanel.SetActive(false);
             }
         }
         if(checkSHDTimer()){
-            if(currencyClick.score >= 50){
+            if(SpawnCurrency.money >= 50){
                 SHDPanel.SetActive(false);
             }
         }
         if(checkBBTimer()){
-            if(currencyClick.score >= 150){
+            if(SpawnCurrency.money >= 150){
                 BBPanel.SetActive(false);
             }
         }
         if(checkSNDTimer()){
-            if(currencyClick.score >= 175){
+            if(SpawnCurrency.money >= 175){
                 SNDPanel.SetActive(false);
             }
         }
         if(checkBRTimer()){
-            if(currencyClick.score >= 200){
+            if(SpawnCurrency.money >= 200){
                 BRPanel.SetActive(false);
             }
         }
