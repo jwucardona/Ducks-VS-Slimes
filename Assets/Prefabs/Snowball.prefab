@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 3306225011507868646}
   - component: {fileID: 2667820875039729048}
   - component: {fileID: 8837304066134848187}
-  - component: {fileID: 1349146712151416846}
+  - component: {fileID: 1128094847006346256}
   m_Layer: 0
-  m_Name: Ball
+  m_Name: Snowball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d59560272bda8bb4eb807ab9c99aceae, type: 2}
+  - {fileID: 2100000, guid: ed35a3c11d867534bbcb36ea004f166c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1349146712151416846
+--- !u!114 &1128094847006346256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,6 +124,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1048942195315893929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f415d19730406554d9ebb3e073008568, type: 3}
+  m_Script: {fileID: 11500000, guid: 62e7f471e62b4a04faaeb6418634a74f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

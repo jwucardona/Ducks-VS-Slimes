@@ -114,37 +114,37 @@ public class ShopScript : MonoBehaviour
         GameControllerScript.shopActive = true;
         currDefense = bubbleShooter;
         print("bubbleShooter");
-        currencyClick.score = currencyClick.score - 100;
+        SpawnCurrency.money = SpawnCurrency.money - 100;
     }
     public void placeBubbleDuck(){
         GameControllerScript.shopActive = true;
         currDefense = bubbleDuck;
         print("bubbleDuck");
-        currencyClick.score = currencyClick.score - 50;
+        SpawnCurrency.money = SpawnCurrency.money - 50;
     }
     public void placeBubbleBomb(){
         GameControllerScript.shopActive = true;
         currDefense = bubbleBomb;
         print("bubbleBomb");
-        currencyClick.score = currencyClick.score - 150;
+        SpawnCurrency.money = SpawnCurrency.money - 150;
     }
     public void placeShieldDuck(){
         GameControllerScript.shopActive = true;
         currDefense = shieldDuck;
         print("shieldDuck");
-        currencyClick.score = currencyClick.score - 50;
+        SpawnCurrency.money = SpawnCurrency.money - 50;
     }
     public void placeSnowDuck(){
         GameControllerScript.shopActive = true;
         currDefense = snowDuck;
         print("snowDuck");
-        currencyClick.score = currencyClick.score - 175;
+        SpawnCurrency.money = SpawnCurrency.money - 175;
     }
     public void placeBubbleRepeater(){
         GameControllerScript.shopActive = true;
         currDefense = bubbleRepeater;
         print("bubbleRepeater");
-        currencyClick.score = currencyClick.score - 200;
+        SpawnCurrency.money = SpawnCurrency.money - 200;
     }
     public void removeDuck(){
         print("remove Duck");

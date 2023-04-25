@@ -7,7 +7,7 @@ public class DuckUnit : AbstractUnit
     // Declare the variables
     float interval;
     int cost;
-    float recharge;
+    protected float recharge;
 
     // Constructor
     public DuckUnit(int hp, int dmg, float interval, int cost, float recharge) : base(hp, dmg)

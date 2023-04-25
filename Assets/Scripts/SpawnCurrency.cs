@@ -50,7 +50,7 @@ public class SpawnCurrency : MonoBehaviour
             if(hit.collider.gameObject.tag == "WaterDrop")
             {
               Destroy (hit.collider.gameObject); 
-              money+=20;
+              money+=25;
             }
          }
      }
