@@ -3,7 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Plant
+  - Tile
+  - 'Bubble Duck  '
+  - Bubble Bomb
+  - Shield Duck
+  - Snow Duck
+  - Bubble Shooter
+  - Bubble Repeater
+  - Shovel
   layers:
   - Default
   - TransparentFX

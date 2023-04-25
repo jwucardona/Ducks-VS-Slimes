@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class GameControllerScript : MonoBehaviour
 {
     TileScript[] tiles;
+    List<GameObject> ducks = new List<GameObject>();
 
     private TileScript start, end;
 
@@ -19,6 +20,9 @@ public class GameControllerScript : MonoBehaviour
     public Camera cam;
     private Material newColor;
     TileScript tileTarget;
+
+    public static bool shopActive = false;
+    public static bool removeDefense = false;
 
     private static GameControllerScript theGameController;
 
@@ -67,11 +71,11 @@ System.Random rnd = new System.Random();
                 tileTarget.setColor(Color.blue * 2);
             }
         }
-
-        if (Input.GetMouseButtonDown(0))
+        //TESTER CODE TO PLACE DUCKS AT ANY POINT IN THE GAME
+        /*if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
@@ -81,11 +85,73 @@ System.Random rnd = new System.Random();
                 }
             }
         }
-        
         if (tileTarget != null && Input.GetKeyDown(KeyCode.Return))
         {
             GameObject newObject = Instantiate(duckDefaultPrefab, new Vector3(tileTarget.transform.position.x, 1f, tileTarget.transform.position.z), transform.rotation * Quaternion.Euler(270f, 90f, 0f));
             tileTarget = null;
+        }*/
+
+        //CODE TO PLACE DUCKS ONLY WHEN SHOP IS OPEN
+        if(shopActive){
+            Ray ray;
+            RaycastHit hit;
+            //HIGHLIGHT SQUARES
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray,out hit) && hit.transform.tag == "Tile" && !hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken()){
+                hit.collider.transform.gameObject.GetComponent<TileScript>().setColor(Color.blue * 2);
+            }
+            //SET POSITION
+            if (Input.GetMouseButtonDown(0))
+            {
+                ray = cam.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, 100.0f))
+                {
+                    if (hit.transform != null && hit.transform.tag == "Tile" && !hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken())
+                    {
+                        tileTarget = hit.transform.gameObject.GetComponent<TileScript>();
+
+                    }
+                }
+            }
+            if (tileTarget != null && Input.GetKeyDown(KeyCode.Return))
+            {
+                GameObject newObject = Instantiate(ShopScript.getCurrDefense(), new Vector3(tileTarget.transform.position.x, 1f, tileTarget.transform.position.z), transform.rotation * Quaternion.Euler(270f, 90f, 0f));
+                ducks.Add(newObject);
+                tileTarget.setTaken(true);
+                tileTarget = null;
+                shopActive = false;
+            }
+        }
+
+        if(removeDefense){
+            Ray ray;
+            RaycastHit hit;
+            //HIGHLIGHT SQUARES
+            ray = cam.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray,out hit) && hit.transform.tag == "Tile" && hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken()){
+                hit.collider.transform.gameObject.GetComponent<TileScript>().setColor(Color.blue * 2);
+            }
+            if (Input.GetMouseButtonDown(0))
+            {
+                ray = cam.ScreenPointToRay(Input.mousePosition);
+
+                if (Physics.Raycast(ray, out hit, 100.0f))
+                {
+                    if (hit.transform != null && (hit.transform.tag == "Tile" || hit.transform.tag == "Duck")&& hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken())
+                    {
+                        for(int i = 0; i< ducks.Count; i++){
+                            if (hit.transform.position.x == ducks[i].transform.position.x && hit.transform.position.z == ducks[i].transform.position.z){
+                                Destroy(ducks[i]);
+                                ducks.RemoveAt(i);
+                                removeDefense = false;
+                                break;
+                            }
+                        }
+
+                    }
+                }
+            }
         }
     }
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -4809390749495989513}
   m_Layer: 0
   m_Name: Snow Duck
-  m_TagString: Untagged
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

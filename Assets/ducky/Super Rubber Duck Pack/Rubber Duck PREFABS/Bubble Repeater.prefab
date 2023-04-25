@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -3784272617740596697}
   m_Layer: 0
   m_Name: Bubble Repeater
-  m_TagString: Untagged
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
