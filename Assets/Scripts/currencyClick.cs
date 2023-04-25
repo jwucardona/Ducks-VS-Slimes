@@ -9,6 +9,7 @@ public class currencyClick : MonoBehaviour
     void OnMouseDown() 
     {
         // Increase Score
+        print("should be destroying water drop");
         score += 20;
 
         // Destroy Sun

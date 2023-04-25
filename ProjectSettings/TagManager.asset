@@ -13,6 +13,8 @@ TagManager:
   - Bubble Shooter
   - Bubble Repeater
   - Shovel
+  - Duck
+  - WaterDrop
   layers:
   - Default
   - TransparentFX

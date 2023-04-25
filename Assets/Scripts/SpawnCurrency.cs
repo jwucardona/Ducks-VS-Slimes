@@ -35,16 +35,9 @@ public class SpawnCurrency : MonoBehaviour
     {
         if(co.gameObject.tag == "WaterDrop")
         {
+            print("collsion");
             Destroy(co.gameObject);
         }
-    }
-    void OnMouseDown() 
-    {
-        // Increase Score
-        //score += 20;
-
-        // Destroy Sun
-        Destroy(waterDrop);
     }
     /*public GameObject currency;
     // Start is called before the first frame update
