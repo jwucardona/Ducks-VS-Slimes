@@ -118,6 +118,30 @@ System.Random rnd = new System.Random();
             {
                 GameObject newObject = Instantiate(ShopScript.getCurrDefense(), new Vector3(tileTarget.transform.position.x, 1f, tileTarget.transform.position.z), transform.rotation * Quaternion.Euler(270f, 90f, 0f));
                 ducks.Add(newObject);
+                if(newObject.tag == "Bubble Shooter"){
+                    ShopScript.startBSTimer = true;
+                    print("BS Timer started");
+                }
+                if(newObject.tag == "Duck"){
+                    ShopScript.startBDTimer = true;
+                    print("BD Timer started");
+                }
+                if(newObject.tag == "Bubble Repeater"){
+                    ShopScript.startBRTimer = true;
+                    print("BR Timer started");
+                }
+                if(newObject.tag == "Bubble Bomb"){
+                    ShopScript.startBBTimer = true;
+                    print("BB Timer started");
+                }
+                if(newObject.tag == "Snow Duck"){
+                    ShopScript.startSNDTimer = true;
+                    print("SND Timer started");
+                }
+                if(newObject.tag == "Shield Duck"){
+                    ShopScript.startSHDTimer = true;
+                    print("SHD Timer started");
+                }
                 tileTarget.setTaken(true);
                 tileTarget = null;
                 shopActive = false;
@@ -226,7 +250,7 @@ System.Random rnd = new System.Random();
         temp.Clear();
         path.Clear();
         current = end;
-        while (current != start && current != null) 
+        while (current != start && current != null)
         {
             //current is the path from each node starting from the back to the front
             temp.Add(current);

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17740202, g: 0.2220945, b: 0.30431822, a: 1}
+  m_IndirectSpecularColor: {r: 0.17740151, g: 0.22209351, b: 0.30431652, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5731,7 +5731,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 729878437}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1153044342}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: placeBubbleRepeater
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &729878437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6502,7 +6514,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 788587859}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1153044342}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: placeBubbleBomb
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &788587859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12447,7 +12471,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1467721164}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1153044342}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: placeSnowDuck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1467721164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14403,7 +14439,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1661466833}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1153044342}
+        m_TargetAssemblyTypeName: ShopScript, Assembly-CSharp
+        m_MethodName: placeShieldDuck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1661466833
 MonoBehaviour:
   m_ObjectHideFlags: 0
