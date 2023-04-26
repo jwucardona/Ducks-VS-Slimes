@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3372320}
   - component: {fileID: 2376718}
   - component: {fileID: -4809390749495989513}
-  m_Layer: 0
+  - component: {fileID: 513449864439536639}
+  m_Layer: 6
   m_Name: Snow Duck
-  m_TagString: Snow Duck
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +103,19 @@ MonoBehaviour:
   snowball: {fileID: 1048942195315893929, guid: 465a0f996d2477a4a88af0e9a4cc4f8b,
     type: 3}
   beakEnd: {fileID: 6643678583546289464}
+--- !u!135 &513449864439536639
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148310}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.88296837
+  m_Center: {x: 0, y: -0.65, z: 0.68039525}
 --- !u!1 &1264910555341320437
 GameObject:
   m_ObjectHideFlags: 0

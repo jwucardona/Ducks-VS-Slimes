@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3354690}
   - component: {fileID: 2367876}
   - component: {fileID: 4002168728536452308}
-  m_Layer: 0
+  - component: {fileID: 4882970619587810357}
+  m_Layer: 6
   m_Name: Bubble Duck
-  m_TagString: Bubble Duck 2
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +103,19 @@ MonoBehaviour:
   waterDrop: {fileID: 239646644059180342, guid: fef98e95d4f341a4c955555730d78497,
     type: 3}
   beakEnd: {fileID: 8918382238460782551}
+--- !u!135 &4882970619587810357
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 193028}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.88296837
+  m_Center: {x: 0, y: -0.65, z: 0.68039525}
 --- !u!1 &2434434829826864284
 GameObject:
   m_ObjectHideFlags: 0
