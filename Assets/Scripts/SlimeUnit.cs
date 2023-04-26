@@ -105,7 +105,7 @@ public class SlimeUnit : AbstractUnit
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(speed * -1, 0, 0));
+        transform.Translate(new Vector3(0, 0, speed * 1));
 
 
         // switch (currentState)
