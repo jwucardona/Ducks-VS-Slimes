@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameControllerScript : MonoBehaviour
 {
     TileScript[] tiles;
-    List<GameObject> ducks = new List<GameObject>();
+    public static List<GameObject> ducks = new List<GameObject>();
 
     private TileScript start, end;
 
@@ -122,7 +122,7 @@ System.Random rnd = new System.Random();
                     ShopScript.startBSTimer = true;
                     print("BS Timer started");
                 }
-                if(newObject.tag == "Duck"){
+                if(newObject.tag == "Bubble Duck 2"){
                     ShopScript.startBDTimer = true;
                     print("BD Timer started");
                 }

@@ -13,6 +13,14 @@ public class ShopScript : MonoBehaviour
     public GameObject SNDPanel;
     public GameObject BRPanel;
 
+    public GameObject BSFrame;
+    public GameObject BDFrame;
+    public GameObject SHDFrame;
+    public GameObject BBFrame;
+    public GameObject SNDFrame;
+    public GameObject BRFrame;
+    public GameObject shovelFrame;
+
     private static GameObject currDefense;
     public GameObject bubbleShooter;
     public GameObject bubbleDuck;
@@ -46,6 +54,14 @@ public class ShopScript : MonoBehaviour
     {
         sunCounter.text = SpawnCurrency.money.ToString();
 
+        BSFrame.SetActive(false);
+        BDFrame.SetActive(false);
+        SHDFrame.SetActive(false);
+        BBFrame.SetActive(false);
+        SNDFrame.SetActive(false);
+        BRFrame.SetActive(false);
+        shovelFrame.SetActive(false);
+
         BSPanel.SetActive(true);
         BDPanel.SetActive(true);
         BBPanel.SetActive(true);
@@ -71,35 +87,65 @@ public class ShopScript : MonoBehaviour
         if(startSNDTimer){
             SNDTimer += Time.deltaTime;
         }
+        if(GameControllerScript.removeDefense){
+            shovelFrame.SetActive(true);
 
-        if(checkBSTimer()){
-            if(SpawnCurrency.money >= 100){
+        }else if(GameControllerScript.shopActive){
+
+            if(currDefense == bubbleShooter){
                 BSPanel.SetActive(false);
+                BSFrame.SetActive(true);
             }
-        }
-        if(checkBDTimer()){
-            if(SpawnCurrency.money >= 50){
+            if(currDefense == bubbleDuck){
                 BDPanel.SetActive(false);
+                BDFrame.SetActive(true);
             }
-        }
-        if(checkSHDTimer()){
-            if(SpawnCurrency.money >= 50){
-                SHDPanel.SetActive(false);
-            }
-        }
-        if(checkBBTimer()){
-            if(SpawnCurrency.money >= 150){
-                BBPanel.SetActive(false);
-            }
-        }
-        if(checkSNDTimer()){
-            if(SpawnCurrency.money >= 175){
-                SNDPanel.SetActive(false);
-            }
-        }
-        if(checkBRTimer()){
-            if(SpawnCurrency.money >= 200){
+            if(currDefense == bubbleRepeater){
                 BRPanel.SetActive(false);
+                BRFrame.SetActive(true);
+            }
+            if(currDefense == bubbleBomb){
+                BBPanel.SetActive(false);
+                BBFrame.SetActive(true);
+            }
+            if(currDefense == snowDuck){
+                SNDPanel.SetActive(false);
+                SNDFrame.SetActive(true);
+            }
+            if(currDefense == shieldDuck){
+                SHDPanel.SetActive(false);
+                SHDFrame.SetActive(true);
+            }
+        }else{
+            if(checkBSTimer()){
+                if(SpawnCurrency.money >= 100){
+                    BSPanel.SetActive(false);
+                }
+            }
+            if(checkBDTimer()){
+                if(SpawnCurrency.money >= 50){
+                    BDPanel.SetActive(false);
+                }
+            }
+            if(checkSHDTimer()){
+                if(SpawnCurrency.money >= 50){
+                    SHDPanel.SetActive(false);
+                }
+            }
+            if(checkBBTimer()){
+                if(SpawnCurrency.money >= 150){
+                    BBPanel.SetActive(false);
+                }
+            }
+            if(checkSNDTimer()){
+                if(SpawnCurrency.money >= 175){
+                    SNDPanel.SetActive(false);
+                }
+            }
+            if(checkBRTimer()){
+                if(SpawnCurrency.money >= 200){
+                    BRPanel.SetActive(false);
+                }
             }
         }
     }
@@ -113,42 +159,38 @@ public class ShopScript : MonoBehaviour
     public void placeBubbleShooter(){
         GameControllerScript.shopActive = true;
         currDefense = bubbleShooter;
-        print("bubbleShooter");
         SpawnCurrency.money = SpawnCurrency.money - 100;
     }
     public void placeBubbleDuck(){
         GameControllerScript.shopActive = true;
         currDefense = bubbleDuck;
-        print("bubbleDuck");
         SpawnCurrency.money = SpawnCurrency.money - 50;
     }
     public void placeBubbleBomb(){
         GameControllerScript.shopActive = true;
         currDefense = bubbleBomb;
-        print("bubbleBomb");
         SpawnCurrency.money = SpawnCurrency.money - 150;
     }
     public void placeShieldDuck(){
         GameControllerScript.shopActive = true;
         currDefense = shieldDuck;
-        print("shieldDuck");
         SpawnCurrency.money = SpawnCurrency.money - 50;
     }
     public void placeSnowDuck(){
         GameControllerScript.shopActive = true;
         currDefense = snowDuck;
-        print("snowDuck");
         SpawnCurrency.money = SpawnCurrency.money - 175;
     }
     public void placeBubbleRepeater(){
         GameControllerScript.shopActive = true;
         currDefense = bubbleRepeater;
-        print("bubbleRepeater");
         SpawnCurrency.money = SpawnCurrency.money - 200;
     }
+
     public void removeDuck(){
-        print("remove Duck");
-        GameControllerScript.removeDefense = true;
+        if(GameControllerScript.ducks.Count != 0){
+            GameControllerScript.removeDefense = true;
+        }
     }
 
     public bool checkBSTimer(){
