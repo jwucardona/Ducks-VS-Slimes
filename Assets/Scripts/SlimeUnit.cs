@@ -9,6 +9,7 @@ public class SlimeUnit : AbstractUnit
     // Declare the variables
     public float speed;
     private Vector3 spawn;
+    private bool isStopped;
 
     public Face faces;
     public GameObject SmileBody;
@@ -102,11 +103,20 @@ public class SlimeUnit : AbstractUnit
         animator.SetTrigger("Attack");
     }
 
+    private void OnTriggerEnter(Collider other){
+        if (other.gameObject.layer == 6 || other.tag == "Duck"){
+            isStopped = true;
+            print("Slime hit duck");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector3(0, 0, speed * 1));
-
+        if (!isStopped){
+            transform.Translate(new Vector3(0, 0, speed * 1));
+        }
+        
 
         // switch (currentState)
         // {

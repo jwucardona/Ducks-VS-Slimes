@@ -229,7 +229,9 @@ GameObject:
   - component: {fileID: 4875016087507631416}
   - component: {fileID: 3028298476673879213}
   - component: {fileID: -3585652021195613052}
-  m_Layer: 0
+  - component: {fileID: 8894380150667154969}
+  - component: {fileID: 6710031346431837109}
+  m_Layer: 7
   m_Name: Slime_01_Viking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -315,6 +317,35 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!54 &8894380150667154969
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6688149642241925542}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &6710031346431837109
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6688149642241925542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!1 &7588663013591350367
 GameObject:
   m_ObjectHideFlags: 0

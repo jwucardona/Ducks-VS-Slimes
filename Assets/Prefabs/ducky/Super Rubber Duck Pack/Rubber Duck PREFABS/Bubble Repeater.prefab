@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3328172}
   - component: {fileID: 2307808}
   - component: {fileID: -3784272617740596697}
-  m_Layer: 0
+  - component: {fileID: 7152342950994154375}
+  m_Layer: 6
   m_Name: Bubble Repeater
-  m_TagString: Bubble Repeater
+  m_TagString: Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,6 +103,19 @@ MonoBehaviour:
   basicShot: {fileID: 1048942195315893929, guid: 7a5278f99a16987489fbaf9e7a053276,
     type: 3}
   beakEnd: {fileID: 7793773044914731556}
+--- !u!135 &7152342950994154375
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.88296837
+  m_Center: {x: 0, y: -0.65, z: 0.68039525}
 --- !u!1 &5913051334676830994
 GameObject:
   m_ObjectHideFlags: 0
