@@ -50,4 +50,5 @@ public class BubbleDuck : DuckUnit
         yield return new WaitForSeconds(4f);
         Destroy(shot.gameObject);
     }
+    
 }

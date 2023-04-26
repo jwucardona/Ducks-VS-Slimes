@@ -12,12 +12,11 @@ GameObject:
   - component: {fileID: 8796907083879738539}
   - component: {fileID: 6784467728540348767}
   - component: {fileID: 5248224631261981819}
-  - component: {fileID: 4760401273961612515}
   - component: {fileID: 6515849002580790333}
   - component: {fileID: 2012858826930419936}
   m_Layer: 0
   m_Name: BubbleDuckDrop
-  m_TagString: Untagged
+  m_TagString: WaterDrop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,20 +97,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4760401273961612515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239646644059180342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d8065e1ed889864fb329ee886bdac1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &6515849002580790333
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,4 +127,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de4e06d62c2ac241a763fb2af30b0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0.25}
