@@ -267,6 +267,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 181
   damage: 100
+  faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
+  SmileBody: {fileID: 2669671996729381096}
+  animator: {fileID: 2034920383527868118}
+  agent: {fileID: 8160104853957805843}
+  damType: 0
 --- !u!135 &6011607725148132066
 SphereCollider:
   m_ObjectHideFlags: 0

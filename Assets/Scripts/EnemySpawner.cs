@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
         newObject.setSpawn(new Vector3(spawnPoint.transform.position.x, 1f, spawnPoint.transform.position.z));
         enemies.Add(newObject.gameObject);
         newObject.setDestination(tempDestination.transform.position);
-        newObject.Walk();
+        newObject.Attack();
     }
 
     // Update is called once per frame
