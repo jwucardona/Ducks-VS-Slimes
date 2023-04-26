@@ -31,28 +31,24 @@ public class SpawnCurrency : MonoBehaviour
         pos.z = Random.Range(minPos.z, maxPos.z);
        StartCoroutine(spawn());
     }
-    void OnCollisionEnter(Collision co)
-    {
-        if(co.gameObject.tag == "WaterDrop")
-        {
-            print("collsion");
-            Destroy(co.gameObject);
-        }
-    }
      private Ray ray; // The ray
      private RaycastHit hit; // What we hit
      public static int money = 100;
      void Update()
      {
-         ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Ray will be sent out from where your mouse is located    
-         if(Physics.Raycast(ray,out hit, 1000.0f) && Input.GetMouseButtonDown (0)) // On left click we send down a ray
+         /*ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Ray will be sent out from where your mouse is located
+         if(Physics.Raycast(ray,out hit, 100.0f) && Input.GetMouseButtonDown (0)) // On left click we send down a ray
          {
             if(hit.collider.gameObject.tag == "WaterDrop")
             {
+              print("water2");
               Destroy (hit.collider.gameObject); 
               money+=25;
             }
-         }
+         }*/
+     }
+     public static void setCurrency(){
+        money+=25;
      }
     /*public GameObject currency;
     // Start is called before the first frame update

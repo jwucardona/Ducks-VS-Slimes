@@ -59,6 +59,17 @@ System.Random rnd = new System.Random();
     // Update is called once per frame
     void Update()
     {
+        Ray ray;
+        RaycastHit hit;
+        ray = cam.ScreenPointToRay(Input.mousePosition); // Ray will be sent out from where your mouse is located
+         if(Physics.Raycast(ray,out hit, 100.0f) && Input.GetMouseButtonDown (0)) // On left click we send down a ray
+         {
+            if(hit.collider.gameObject.tag == "WaterDrop")
+            {
+              Destroy (hit.collider.gameObject);
+              SpawnCurrency.setCurrency();
+            }
+         }
         if(start != null && end != null){
             computerPath(start, end);
         }
@@ -93,8 +104,6 @@ System.Random rnd = new System.Random();
 
         //CODE TO PLACE DUCKS ONLY WHEN SHOP IS OPEN
         if(shopActive){
-            Ray ray;
-            RaycastHit hit;
             //HIGHLIGHT SQUARES
             ray = cam.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray,out hit) && hit.transform.tag == "Tile" && !hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken()){
@@ -112,7 +121,10 @@ System.Random rnd = new System.Random();
                         tileTarget = hit.transform.gameObject.GetComponent<TileScript>();
 
                     }
+
                 }
+
+
             }
             if (tileTarget != null && Input.GetKeyDown(KeyCode.Return))
             {
@@ -149,8 +161,6 @@ System.Random rnd = new System.Random();
         }
 
         if(removeDefense){
-            Ray ray;
-            RaycastHit hit;
             //HIGHLIGHT SQUARES
             ray = cam.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray,out hit) && hit.transform.tag == "Tile" && hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken()){
