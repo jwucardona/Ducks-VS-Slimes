@@ -15,7 +15,7 @@ public class SlimeUnit : AbstractUnit
     public GameObject SmileBody;
     // public AnimationState currentState; 
     public Animator animator;
-    public NavMeshAgent agent;
+    //public NavMeshAgent agent;
     public int damType;
 
     private bool move;
@@ -49,13 +49,6 @@ public class SlimeUnit : AbstractUnit
     {
         this.destination = destination;
     }
-
-    private void StopAgent()
-    {
-        agent.isStopped = true;
-        animator.SetFloat("Speed", 0);
-        agent.updateRotation = false;
-    }
     
     // Start is called before the first frame update
     void Start()
@@ -67,40 +60,18 @@ public class SlimeUnit : AbstractUnit
     public void Idle()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
-        StopAgent();
+        animator.SetBool("Attack", false);
+        //StopAgent();
         //SetFace(faces.Idleface);
     }
 
-    public void Walk()
-    {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walk")) return;
-
-        agent.isStopped = false;
-        agent.updateRotation = true;
-
-        agent.SetDestination(destination);
-        // Debug.Log("WalkToOrg");
-        //SetFace(faces.WalkFace);
-        // agent reaches the destination
-        if (agent.remainingDistance < agent.stoppingDistance)
-        {
-            // walkType = WalkType.Patroll;
-            //facing to camera
-            //transform.rotation = Quaternion.identity;
-            Idle();
-        }
-           
-    
-        // set Speed parameter synchronized with agent root motion moverment
-        animator.SetFloat("Speed", agent.velocity.magnitude);
-    }
 
     public void Attack()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
-        StopAgent();
+        //StopAgent();
         //SetFace(faces.attackFace);
-        animator.SetTrigger("Attack");
+        animator.SetBool("Attack", true);
     }
 
     private void OnTriggerEnter(Collider other){
@@ -115,6 +86,10 @@ public class SlimeUnit : AbstractUnit
     {
         if (!isStopped){
             transform.Translate(new Vector3(0, 0, speed * 1));
+            Idle();
+        }
+        else{
+            Attack();
         }
         
 

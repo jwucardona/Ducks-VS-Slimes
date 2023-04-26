@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17740151, g: 0.22209351, b: 0.30431652, a: 1}
+  m_IndirectSpecularColor: {r: 0.17740202, g: 0.2220945, b: 0.30431822, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1046,6 +1046,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 555552725}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &104390683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6415249747473109141, guid: 34dcae06499f38e49bf68376aa0cbb38,
+    type: 3}
+  m_PrefabInstance: {fileID: 994722419}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &104390685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104390683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895dbc90fbea70740a22c5de622bae38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  slimes:
+  - spawnTime: 2
+    slimeType: 0
+    Spawner: 0
+    RandomSpawn: 0
+    isSpawned: 0
+  - spawnTime: 3
+    slimeType: 1
+    Spawner: 1
+    RandomSpawn: 0
+    isSpawned: 0
+  - spawnTime: 5
+    slimeType: 2
+    Spawner: 2
+    RandomSpawn: 0
+    isSpawned: 0
+  - spawnTime: 6
+    slimeType: 3
+    Spawner: 3
+    RandomSpawn: 0
+    isSpawned: 0
+  slimesPrefabs:
+  - {fileID: 6705402075998324148, guid: d941199d4a58fcb45adc75ea8e37c42c, type: 3}
+  - {fileID: 6688149642241925542, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
+  - {fileID: 3198502390492704377, guid: 0ba0f6eee23032e4e83d421e739dc905, type: 3}
+  - {fileID: 873531700701352353, guid: 28d0a30d6aed6fc4c8ca473413f70c24, type: 3}
 --- !u!1001 &110692071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6884,7 +6929,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6de4e06d62c2ac241a763fb2af30b0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: {x: 0, y: 0.5}
 --- !u!54 &799290515
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9025,6 +9069,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lane5
       objectReference: {fileID: 0}
+    - target: {fileID: 7074468730800552233, guid: 34dcae06499f38e49bf68376aa0cbb38,
+        type: 3}
+      propertyPath: slimesPrefabs.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7376337648418307863, guid: 34dcae06499f38e49bf68376aa0cbb38,
         type: 3}
       propertyPath: kingSlimePrefab
@@ -9079,7 +9128,12 @@ PrefabInstance:
       propertyPath: spawnPoints.Array.data[4]
       value: 
       objectReference: {fileID: 1126639270}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7074468730800552233, guid: 34dcae06499f38e49bf68376aa0cbb38, type: 3}
+    - {fileID: 7084052526909819422, guid: 34dcae06499f38e49bf68376aa0cbb38, type: 3}
+    - {fileID: 1638961954570735416, guid: 34dcae06499f38e49bf68376aa0cbb38, type: 3}
+    - {fileID: 5769682171854554342, guid: 34dcae06499f38e49bf68376aa0cbb38, type: 3}
+    - {fileID: 4802550590485013940, guid: 34dcae06499f38e49bf68376aa0cbb38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 34dcae06499f38e49bf68376aa0cbb38, type: 3}
 --- !u!1001 &994842101
 PrefabInstance:

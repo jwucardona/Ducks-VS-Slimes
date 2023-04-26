@@ -153,7 +153,6 @@ MonoBehaviour:
   faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
   SmileBody: {fileID: 6080307935716506405}
   animator: {fileID: 3715040245419621482}
-  agent: {fileID: 5316637618964168972}
   damType: 0
 --- !u!114 &3895460684754395327
 MonoBehaviour:
@@ -173,7 +172,6 @@ MonoBehaviour:
   faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
   SmileBody: {fileID: 6080307935716506405}
   animator: {fileID: 3715040245419621482}
-  agent: {fileID: 5316637618964168972}
   damType: 0
 --- !u!135 &2464253733730386022
 SphereCollider:
@@ -215,7 +213,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3198502390492704377}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.35
   m_Speed: 1
