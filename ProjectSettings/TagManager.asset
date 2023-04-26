@@ -15,6 +15,10 @@ TagManager:
   - Shovel
   - Duck
   - WaterDrop
+  - Basic Slime
+  - King Slime
+  - Bunny Slime
+  - Knight Slime
   layers:
   - Default
   - TransparentFX

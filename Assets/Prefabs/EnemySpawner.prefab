@@ -71,6 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6415249746682538017}
+  - component: {fileID: 7376337648418307863}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -94,6 +95,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7376337648418307863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415249746682538016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895dbc90fbea70740a22c5de622bae38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  basicSlimePrefab: {fileID: 6705402075998324148, guid: d941199d4a58fcb45adc75ea8e37c42c,
+    type: 3}
+  bunnySlimePrefab: {fileID: 873531700701352353, guid: 28d0a30d6aed6fc4c8ca473413f70c24,
+    type: 3}
+  knightSlimePrefab: {fileID: 3198502390492704377, guid: 0ba0f6eee23032e4e83d421e739dc905,
+    type: 3}
+  kingSlimePrefab: {fileID: 6688149642241925542, guid: 11eed2dfd1329ab4db9e7f27b8e628b7,
+    type: 3}
+  spawnPoints:
+  - {fileID: 6415249746837099802}
+  - {fileID: 6415249746745926553}
+  - {fileID: 6415249747555664290}
+  - {fileID: 6415249745891397512}
+  - {fileID: 6415249746551232617}
 --- !u!1 &6415249746745926553
 GameObject:
   m_ObjectHideFlags: 0
