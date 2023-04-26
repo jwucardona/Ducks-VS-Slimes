@@ -30,6 +30,10 @@ public class BubbleDuck : DuckUnit
             {
             StartCoroutine(freeze());
             }
+            else
+            {
+                currencyMover.velocity.y = 0.25f;
+            }
         }
         timer += Time.deltaTime;
         if (timer > interval)
