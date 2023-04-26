@@ -17,14 +17,14 @@ public class BubbleDuck : DuckUnit
     // Start is called before the first frame update
     void Start()
     {
-        timer = recharge - 0.1f;
+        timer = interval - 0.1f;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > recharge)
+        if (timer > interval)
         {
             spawnCurrency();
             timer = 0;
@@ -34,6 +34,6 @@ public class BubbleDuck : DuckUnit
     GameObject shot;
     public void spawnCurrency()
     {
-        shot = Instantiate(waterDrop, new Vector3(transform.position.x, transform.position.y + 5, transform.position.z), transform.rotation);
+        shot = Instantiate(waterDrop, new Vector3(transform.position.x, transform.position.y + 2, transform.position.z), transform.rotation);
     }
 }

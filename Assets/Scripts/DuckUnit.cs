@@ -5,7 +5,7 @@ using UnityEngine;
 public class DuckUnit : AbstractUnit
 {
     // Declare the variables
-    float interval;
+    protected float interval;
     int cost;
     protected float recharge;
 

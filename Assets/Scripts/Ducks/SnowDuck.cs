@@ -16,14 +16,14 @@ public class SnowDuck : DuckUnit
     // Start is called before the first frame update
     void Start()
     {
-        timer = recharge - 0.1f;
+        timer = interval - 0.1f;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > recharge)
+        if (timer > interval)
         {
             Shoot();
             timer = 0;
