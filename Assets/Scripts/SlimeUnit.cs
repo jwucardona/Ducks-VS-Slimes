@@ -66,7 +66,7 @@ public class SlimeUnit : AbstractUnit
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
         StopAgent();
-        SetFace(faces.Idleface);
+        //SetFace(faces.Idleface);
     }
 
     public void Walk()
@@ -78,7 +78,7 @@ public class SlimeUnit : AbstractUnit
 
         agent.SetDestination(destination);
         // Debug.Log("WalkToOrg");
-        SetFace(faces.WalkFace);
+        //SetFace(faces.WalkFace);
         // agent reaches the destination
         if (agent.remainingDistance < agent.stoppingDistance)
         {
@@ -97,7 +97,7 @@ public class SlimeUnit : AbstractUnit
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
         StopAgent();
-        SetFace(faces.attackFace);
+        //SetFace(faces.attackFace);
         animator.SetTrigger("Attack");
     }
 
