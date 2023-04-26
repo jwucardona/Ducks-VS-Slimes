@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class currencyMover : MonoBehaviour
 {
-    public Vector2 velocity;
+    public static Vector2 velocity;
 
     void FixedUpdate ()
     {
