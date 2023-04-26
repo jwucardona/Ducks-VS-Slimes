@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     {
         // get random spawn point
         GameObject spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-        GameObject newObject = Instantiate(kingSlimePrefab, new Vector3(spawnPoint.transform.position.x, 1.5f, spawnPoint.transform.position.z), transform.rotation * Quaternion.Euler(0f, 270f, 0f));
+        GameObject newObject = Instantiate(kingSlimePrefab, new Vector3(spawnPoint.transform.position.x, 1f, spawnPoint.transform.position.z), transform.rotation * Quaternion.Euler(0f, 270f, 0f));
     }
 
     // Update is called once per frame
