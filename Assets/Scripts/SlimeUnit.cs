@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 // public enum AnimationState { Idle,Walk,Attack,Damage}
 
 public class SlimeUnit : AbstractUnit
@@ -13,7 +14,7 @@ public class SlimeUnit : AbstractUnit
     public GameObject SmileBody;
     // public AnimationState currentState; 
     public Animator animator;
-    public UnityEngine.AI.NavMeshAgent agent;
+    public NavMeshAgent agent;
     public int damType;
 
     private bool move;

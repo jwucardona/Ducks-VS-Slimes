@@ -1265,6 +1265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6415249746745926558}
+  - component: {fileID: 5769682171854554342}
   m_Layer: 0
   m_Name: Lane4
   m_TagString: Untagged
@@ -1287,6 +1288,38 @@ Transform:
   m_Father: {fileID: 6415249747473109130}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5769682171854554342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415249746745926553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895dbc90fbea70740a22c5de622bae38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  path:
+  - {fileID: 7654531299237471523}
+  - {fileID: 1161904173426296621}
+  - {fileID: 3443951688313885227}
+  - {fileID: 6062586673584324048}
+  - {fileID: 8289557269026743270}
+  - {fileID: 119988015100939318}
+  - {fileID: 9072463525279972084}
+  - {fileID: 8246585549464896253}
+  - {fileID: 5643807721411905637}
+  basicSlimePrefab: {fileID: 1968638046951210047, guid: d941199d4a58fcb45adc75ea8e37c42c,
+    type: 3}
+  bunnySlimePrefab: {fileID: -7223585344910496532, guid: 72c47fdc43d84b243bdc109c284341d6,
+    type: 3}
+  knightSlimePrefab: {fileID: 3895460684754395327, guid: 0ba0f6eee23032e4e83d421e739dc905,
+    type: 3}
+  kingSlimePrefab: {fileID: -1396455332544489612, guid: 28d0a30d6aed6fc4c8ca473413f70c24,
+    type: 3}
+  spawnPoint: {fileID: 6415249746745926553}
 --- !u!1 &6415249746837099802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6415249746837099803}
+  - component: {fileID: 4802550590485013940}
   m_Layer: 0
   m_Name: Lane5
   m_TagString: Untagged
@@ -1318,6 +1352,38 @@ Transform:
   m_Father: {fileID: 6415249747473109130}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4802550590485013940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6415249746837099802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895dbc90fbea70740a22c5de622bae38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 
+  path:
+  - {fileID: 910085324290751828}
+  - {fileID: 8087322443914412348}
+  - {fileID: 150010729326747897}
+  - {fileID: 3194309058985313860}
+  - {fileID: 8586388360666425271}
+  - {fileID: 8017795235171432875}
+  - {fileID: 8703842587782648048}
+  - {fileID: 754255220817130950}
+  - {fileID: 650871978985712491}
+  basicSlimePrefab: {fileID: 1968638046951210047, guid: d941199d4a58fcb45adc75ea8e37c42c,
+    type: 3}
+  bunnySlimePrefab: {fileID: -7223585344910496532, guid: 72c47fdc43d84b243bdc109c284341d6,
+    type: 3}
+  knightSlimePrefab: {fileID: 3895460684754395327, guid: 0ba0f6eee23032e4e83d421e739dc905,
+    type: 3}
+  kingSlimePrefab: {fileID: -1396455332544489612, guid: 28d0a30d6aed6fc4c8ca473413f70c24,
+    type: 3}
+  spawnPoint: {fileID: 6415249746837099802}
 --- !u!1 &6415249747473109141
 GameObject:
   m_ObjectHideFlags: 0

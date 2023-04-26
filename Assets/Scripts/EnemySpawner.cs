@@ -36,7 +36,21 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
         if (enemies[0] != null){
-            //enemies[0].transform.position = Vector3.MoveTowards(enemies[0].transform.position, tempDestination.transform.position, 0.1f);
+            enemies[0].transform.position = Vector3.MoveTowards(enemies[0].transform.position, path[4].transform.position, 0.1f);
+            for (int i = 0; i < path.Count; i++)
+            {
+                if (enemies[0].transform.position == path[i].transform.position)
+                {
+                    enemies[0].transform.position = Vector3.MoveTowards(enemies[0].transform.position, path[1].transform.position, 0.1f);
+                    // print("here");
+                    // if (i < path.Count - 1)
+                    // {
+                    //     print("here2");
+                    //     enemies[0].transform.position = Vector3.MoveTowards(enemies[0].transform.position, path[i + 1].transform.position, 0.1f);
+                    //     print("here3");
+                    // }
+                }
+            }
         }
     }
 }
