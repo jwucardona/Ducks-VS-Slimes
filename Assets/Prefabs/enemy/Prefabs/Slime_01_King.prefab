@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8955322500898459853}
+  - component: {fileID: 2970201341612386594}
   - component: {fileID: -1396455332544489612}
   - component: {fileID: 6674838253653366886}
   - component: {fileID: -4084969055548275666}
@@ -37,7 +38,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-1396455332544489612
+--- !u!114 &2970201341612386594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -45,6 +46,25 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873531700701352353}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d836f16b4eee841d2883a083a60963bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1281
+  damage: 100
+  faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
+  SmileBody: {fileID: 6610034490362017182}
+  animator: {fileID: -4084969055548275666}
+  agent: {fileID: 6663546942465322682}
+  damType: 0
+--- !u!114 &-1396455332544489612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873531700701352353}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81162c7cc023b45ae8d35982748e32a6, type: 3}
   m_Name: 

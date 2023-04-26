@@ -104,6 +104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2821659471103554755}
+  - component: {fileID: 1479308268994341618}
   - component: {fileID: 3895460684754395327}
   - component: {fileID: 2464253733730386022}
   - component: {fileID: 3715040245419621482}
@@ -132,7 +133,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3895460684754395327
+--- !u!114 &1479308268994341618
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,11 +142,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 3198502390492704377}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d836f16b4eee841d2883a083a60963bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 551
+  damage: 100
+  speed: 0
+  faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
+  SmileBody: {fileID: 6080307935716506405}
+  animator: {fileID: 3715040245419621482}
+  agent: {fileID: 5316637618964168972}
+  damType: 0
+--- !u!114 &3895460684754395327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198502390492704377}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3fa39f2f1e24a52a2cc4fddce71819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 551
   damage: 100
+  speed: 4.7
   faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
   SmileBody: {fileID: 6080307935716506405}
   animator: {fileID: 3715040245419621482}

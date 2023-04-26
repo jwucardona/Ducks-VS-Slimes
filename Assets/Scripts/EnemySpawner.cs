@@ -6,50 +6,42 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public string level;
+    public List<Slime> slimes;
+    public List<GameObject> slimesPrefabs;
     // list of enemies on the level currently
-    List<GameObject> enemies = new List<GameObject>();
+    // List<GameObject> enemies = new List<GameObject>();
 
     //[SerializeField] private GameObject tempDestination;
-    [SerializeField] private List<GameObject> path;
+    // [SerializeField] private List<GameObject> path;
+    // [SerializeField] private GameObject destination;
 
     // enemy unit prefabs
-    [SerializeField] private BasicSlime basicSlimePrefab;
-    [SerializeField] private BunnySlime bunnySlimePrefab;
-    [SerializeField] private KnightSlime knightSlimePrefab;
-    [SerializeField] private KingSlime kingSlimePrefab;
+    // [SerializeField] private BasicSlime basicSlimePrefab;
+    // [SerializeField] private BunnySlime bunnySlimePrefab;
+    // [SerializeField] private KnightSlime knightSlimePrefab;
+    // [SerializeField] private KingSlime kingSlimePrefab;
 
     // list of spawn points
-    [SerializeField] GameObject spawnPoint;
+    // [SerializeField] GameObject spawnPoint;
     // Start is called before the first frame update
     void Start()
     {
-        // get random spawn point
-        // GameObject spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Count)];
-        KingSlime newObject = Instantiate(kingSlimePrefab, new Vector3(spawnPoint.transform.position.x, 1f, spawnPoint.transform.position.z), transform.rotation * Quaternion.Euler(0f, 270f, 0f));
-        newObject.setSpawn(new Vector3(spawnPoint.transform.position.x, 1f, spawnPoint.transform.position.z));
-        enemies.Add(newObject.gameObject);
-        //newObject.setDestination(tempDestination.transform.position);
+        // KingSlime newObject = Instantiate(kingSlimePrefab, new Vector3(spawnPoint.transform.position.x, 1f, spawnPoint.transform.position.z), transform.rotation * Quaternion.Euler(0f, 270f, 0f));
+        // newObject.setSpawn(new Vector3(spawnPoint.transform.position.x, 1f, spawnPoint.transform.position.z));
+        // enemies.Add(newObject.gameObject);
+        // newObject.setDestination(destination.transform.position);
         //newObject.Attack();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (enemies[0] != null){
-            enemies[0].transform.position = Vector3.MoveTowards(enemies[0].transform.position, path[4].transform.position, 0.1f);
-            for (int i = 0; i < path.Count; i++)
+        foreach (Slime slime in slimes)
+        {
+            if (slime.isSpawned == false && slime.spawnTime < Time.time)
             {
-                if (enemies[0].transform.position == path[i].transform.position)
-                {
-                    enemies[0].transform.position = Vector3.MoveTowards(enemies[0].transform.position, path[1].transform.position, 0.1f);
-                    // print("here");
-                    // if (i < path.Count - 1)
-                    // {
-                    //     print("here2");
-                    //     enemies[0].transform.position = Vector3.MoveTowards(enemies[0].transform.position, path[i + 1].transform.position, 0.1f);
-                    //     print("here3");
-                    // }
-                }
+                Instantiate(slimesPrefabs[(int)slime.slimeType], new Vector3(transform.GetChild(slime.Spawner).transform.position.x, 1f, transform.GetChild(slime.Spawner).transform.position.z), transform.rotation * Quaternion.Euler(0f, 270f, 0f));
+                slime.isSpawned = true;
             }
         }
     }

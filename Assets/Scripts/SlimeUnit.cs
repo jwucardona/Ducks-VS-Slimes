@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class SlimeUnit : AbstractUnit
 {
     // Declare the variables
-    float speed;
+    public float speed;
     private Vector3 spawn;
 
     public Face faces;
@@ -105,7 +105,8 @@ public class SlimeUnit : AbstractUnit
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(new Vector3(speed * -1, 0, 0));
+
 
         // switch (currentState)
         // {
