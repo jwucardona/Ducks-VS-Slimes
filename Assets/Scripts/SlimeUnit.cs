@@ -89,7 +89,7 @@ public class SlimeUnit : AbstractUnit
             Idle();
         }
         else{
-            Attack();
+           // Attack();
         }
         
 
