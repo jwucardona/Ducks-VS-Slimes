@@ -59,7 +59,7 @@ public class SlimeUnit : AbstractUnit
 
     public void Idle()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
+        // if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
         animator.SetBool("Attack", false);
         //StopAgent();
         //SetFace(faces.Idleface);
@@ -68,7 +68,7 @@ public class SlimeUnit : AbstractUnit
 
     public void Attack()
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
+        // if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
         //StopAgent();
         //SetFace(faces.attackFace);
         animator.SetBool("Attack", true);
