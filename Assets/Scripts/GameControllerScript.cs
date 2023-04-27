@@ -126,7 +126,7 @@ System.Random rnd = new System.Random();
 
 
             }
-            if (tileTarget != null && Input.GetKeyDown(KeyCode.Return))
+            if (tileTarget != null)
             {
                 GameObject newObject = Instantiate(ShopScript.getCurrDefense(), new Vector3(tileTarget.transform.position.x, 1f, tileTarget.transform.position.z), transform.rotation * Quaternion.Euler(270f, 90f, 0f));
                 ducks.Add(newObject);
