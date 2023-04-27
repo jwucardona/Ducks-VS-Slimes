@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2667820875039729048}
   - component: {fileID: 8837304066134848187}
   - component: {fileID: 1349146712151416846}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Basic Shot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
