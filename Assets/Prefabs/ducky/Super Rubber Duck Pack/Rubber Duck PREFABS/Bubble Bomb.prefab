@@ -102,6 +102,7 @@ MonoBehaviour:
   health: 10000
   damage: 1800
   bombParticles: {fileID: 9006355045596134112}
+  bubbleBomb: {fileID: 866164554487945144}
 --- !u!135 &2361157397986856777
 SphereCollider:
   m_ObjectHideFlags: 0
