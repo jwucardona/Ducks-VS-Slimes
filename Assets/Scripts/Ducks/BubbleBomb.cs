@@ -18,7 +18,6 @@ public class BubbleBomb : DuckUnit
     IEnumerator bomb()
     {
         checkCol = false;
-        print(toKill.Count);
         bombParticles.SetActive(true);
         for(int i = 0; i < toKill.Count; i++)
         {
@@ -36,30 +35,17 @@ public class BubbleBomb : DuckUnit
     {
         if(checkCol)
         {
-        Collider[] colliders = Physics.OverlapSphere(bubbleBomb.transform.position, 4);
+        Collider[] colliders = Physics.OverlapSphere(bubbleBomb.transform.position, 4.5f);
         foreach (var collider in colliders)
         {
-            print(collider.tag);
             if(collider.tag == "Enemy")
             {
-                //go through all enemies and add to list in for loop here ?
                 toKill.Add(collider.gameObject.GetComponent<SlimeUnit>());
-                //startBomb = true;
             }
         }
         }
         StartCoroutine(bomb());
-        /*startBomb = true;
-        if(startBomb)
-        {
-            StartCoroutine(bomb());
-        }*/
+
     }
-    // Update is called once per frame
-    void Update()
-    {
-        //if enemy within certain distance 
-        //StartCoroutine(bomb());
-        //kill enemies within certain range / turn them black
-    }
+
 }
