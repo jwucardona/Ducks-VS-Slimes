@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17740202, g: 0.2220945, b: 0.30431822, a: 1}
+  m_IndirectSpecularColor: {r: 0.17740183, g: 0.22209404, b: 0.304317, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10718,7 +10718,8 @@ MonoBehaviour:
   shovelFrame: {fileID: 691280766}
   bubbleShooter: {fileID: 132218, guid: 9231c8940c2a1234c82caa472d4d08e2, type: 3}
   bubbleDuck: {fileID: 193028, guid: 053e2f3246f04c145a79bb33e7e60b8f, type: 3}
-  bubbleBomb: {fileID: 144290, guid: 436d19b1cddfdff4b99270daeaec55d7, type: 3}
+  bubbleBomb: {fileID: 866164554487945144, guid: 436d19b1cddfdff4b99270daeaec55d7,
+    type: 3}
   shieldDuck: {fileID: 154052, guid: ed2b77dfb9ab3ba44a2e7f72cd768104, type: 3}
   snowDuck: {fileID: 148310, guid: 9e420fa081b35364eac42ee5ceb6ffaf, type: 3}
   bubbleRepeater: {fileID: 127196, guid: b1d5779163eeaef4dad5b96bca2d6199, type: 3}
