@@ -20,6 +20,7 @@ TagManager:
   - Bunny Slime
   - Knight Slime
   - Bubble Duck 2
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: -6277966339285821943}
   m_Layer: 7
   m_Name: Slime_01
-  m_TagString: Basic Slime
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,7 +274,6 @@ MonoBehaviour:
   faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
   SmileBody: {fileID: 2669671996729381096}
   animator: {fileID: 2034920383527868118}
-  agent: {fileID: 8160104853957805843}
   damType: 0
 --- !u!114 &1968638046951210047
 MonoBehaviour:
@@ -294,7 +293,6 @@ MonoBehaviour:
   faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
   SmileBody: {fileID: 2669671996729381096}
   animator: {fileID: 2034920383527868118}
-  agent: {fileID: 8160104853957805843}
   damType: 0
 --- !u!135 &6011607725148132066
 SphereCollider:
@@ -304,7 +302,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6705402075998324148}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.2874267
