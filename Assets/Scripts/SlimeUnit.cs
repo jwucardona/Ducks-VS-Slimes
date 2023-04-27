@@ -81,6 +81,11 @@ public class SlimeUnit : AbstractUnit
         }
     }
 
+    public void slowDown()
+    {
+        speed = 0.005f;
+    }
+
     // Update is called once per frame
     void Update()
     {

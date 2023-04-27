@@ -18,4 +18,14 @@ public class SnowballScript : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 7 || other.tag == "Enemy")
+        {
+            other.GetComponentInParent<AbstractUnit>().TakeDamage(20);
+            other.GetComponentInParent<SlimeUnit>().slowDown();
+            Destroy(this.gameObject);
+        }
+    }
 }

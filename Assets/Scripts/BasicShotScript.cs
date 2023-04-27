@@ -23,13 +23,8 @@ public class BasicShotScript : MonoBehaviour
     {
         if (other.gameObject.layer == 7 || other.tag == "Enemy")
         {
-            print("TEST");
             other.GetComponentInParent<AbstractUnit>().TakeDamage(20);
             Destroy(this.gameObject);
-        }
-        if (other.tag != "Duck")
-        {
-            print("test");
         }
     }
 }
