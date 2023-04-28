@@ -21,6 +21,7 @@ public class SlimeUnit : AbstractUnit
     private bool move;
     private Material faceMaterial;
     private Vector3 destination;
+    private AbstractUnit currTarget;
 
     // Constructor
     public SlimeUnit(int hp, int dmg, float speed) : base(hp, dmg)
@@ -94,7 +95,7 @@ public class SlimeUnit : AbstractUnit
             Idle();
         }
         else{
-           // Attack();
+           Attack();
         }
         
 

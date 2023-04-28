@@ -25,7 +25,7 @@ public class SnowballScript : MonoBehaviour
         {
             other.GetComponentInParent<AbstractUnit>().TakeDamage(20);
             other.GetComponentInParent<SlimeUnit>().slowDown();
-            Destroy(this.gameObject);
+            // Destroy(this.gameObject);
         }
     }
 }

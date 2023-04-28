@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public string level;
+    public int level;
     public List<Slime> slimes;
     public List<GameObject> slimesPrefabs;
     // list of enemies on the level currently
@@ -13,7 +13,11 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        // slimes = new List<Slime>();
+        // levels
+        if (level == 1){
+            //slimes.Add(new Slime());
+        }
     }
 
     // Update is called once per frame
@@ -32,4 +36,6 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
+
+
 }

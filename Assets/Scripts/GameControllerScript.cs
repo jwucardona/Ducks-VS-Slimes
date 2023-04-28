@@ -172,7 +172,7 @@ System.Random rnd = new System.Random();
 
                 if (Physics.Raycast(ray, out hit, 100.0f))
                 {
-                    if (hit.transform != null && (hit.transform.tag == "Tile" || hit.transform.tag == "Duck")&& hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken())
+                    if (hit.transform != null && (hit.transform.tag == "Tile" || hit.transform.gameObject.layer == 6)&& hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken())
                     {
                         for(int i = 0; i< ducks.Count; i++){
                             if (hit.transform.position.x == ducks[i].transform.position.x && hit.transform.position.z == ducks[i].transform.position.z){
