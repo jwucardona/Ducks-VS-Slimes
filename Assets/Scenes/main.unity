@@ -1069,22 +1069,22 @@ MonoBehaviour:
   - spawnTime: 2
     slimeType: 0
     Spawner: 0
-    RandomSpawn: 0
+    RandomSpawn: 1
     isSpawned: 0
   - spawnTime: 3
     slimeType: 1
     Spawner: 1
-    RandomSpawn: 0
+    RandomSpawn: 1
     isSpawned: 0
   - spawnTime: 5
     slimeType: 2
     Spawner: 2
-    RandomSpawn: 0
+    RandomSpawn: 1
     isSpawned: 0
   - spawnTime: 6
     slimeType: 3
     Spawner: 3
-    RandomSpawn: 0
+    RandomSpawn: 1
     isSpawned: 0
   slimesPrefabs:
   - {fileID: 6705402075998324148, guid: d941199d4a58fcb45adc75ea8e37c42c, type: 3}
