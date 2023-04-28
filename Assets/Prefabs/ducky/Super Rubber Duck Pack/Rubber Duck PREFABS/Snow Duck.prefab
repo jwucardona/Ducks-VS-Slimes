@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 513449864439536639}
   m_Layer: 6
   m_Name: Snow Duck
-  m_TagString: Duck
+  m_TagString: Snow Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

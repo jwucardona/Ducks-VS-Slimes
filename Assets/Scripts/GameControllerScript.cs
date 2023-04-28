@@ -164,7 +164,16 @@ System.Random rnd = new System.Random();
             //HIGHLIGHT SQUARES
             ray = cam.ScreenPointToRay(Input.mousePosition);
             if(Physics.Raycast(ray,out hit) && hit.transform.tag == "Tile" && hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken()){
+
                 hit.collider.transform.gameObject.GetComponent<TileScript>().setColor(Color.blue * 2);
+            }
+            if(hit.transform.gameObject.layer == 6){
+                for(int i = 0; i< tiles.Length; i++){
+                     if (hit.transform.position.x == tiles[i].transform.position.x && hit.transform.position.z == tiles[i].transform.position.z){
+                         tiles[i].GetComponent<TileScript>().setColor(Color.blue * 2);
+                         break;
+                     }
+                 }
             }
             if (Input.GetMouseButtonDown(0))
             {
@@ -172,7 +181,7 @@ System.Random rnd = new System.Random();
 
                 if (Physics.Raycast(ray, out hit, 100.0f))
                 {
-                    if (hit.transform != null && (hit.transform.tag == "Tile" || hit.transform.gameObject.layer == 6)&& hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken())
+                    if (hit.transform != null && hit.transform.tag == "Tile" && hit.collider.transform.gameObject.GetComponent<TileScript>().getTaken())
                     {
                         for(int i = 0; i< ducks.Count; i++){
                             if (hit.transform.position.x == ducks[i].transform.position.x && hit.transform.position.z == ducks[i].transform.position.z){
@@ -184,6 +193,10 @@ System.Random rnd = new System.Random();
                             }
                         }
 
+                    }
+                    if(hit.transform.gameObject.layer == 6){
+                        Destroy(hit.transform.gameObject);
+                        removeDefense = false;
                     }
                 }
             }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7996849100412786492}
   m_Layer: 6
   m_Name: Sheild Duck
-  m_TagString: Duck
+  m_TagString: Shield Duck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
