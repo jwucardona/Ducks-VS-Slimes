@@ -13,6 +13,7 @@ public class BoatScript : MonoBehaviour
         {
             // when we add in damage for the slimes, change this to do other.Kill() or other.TakeDamage()
             Destroy(other.gameObject);
+            active = true;
         }
         if (other.gameObject.layer == 10)
         {
@@ -29,7 +30,7 @@ public class BoatScript : MonoBehaviour
     void Update()
     {
         if (active){
-            transform.Translate(new Vector3(0, 0, 0.005f * 1));
+            transform.Translate(new Vector3(0, 0, 0.2f * 1));
         }
     }
 }
