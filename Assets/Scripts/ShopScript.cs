@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class ShopScript : MonoBehaviour
 {
@@ -12,6 +14,9 @@ public class ShopScript : MonoBehaviour
     public GameObject BBPanel;
     public GameObject SNDPanel;
     public GameObject BRPanel;
+    public GameObject infoPanel;
+    public GameObject infoExitButton;
+    public GameObject infoExitButtonBG;
 
     public GameObject BSFrame;
     public GameObject BDFrame;
@@ -46,6 +51,9 @@ public class ShopScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        infoPanel.SetActive(false);
+        infoExitButton.SetActive(false);
+        infoExitButtonBG.SetActive(false);
 
     }
 
@@ -271,5 +279,21 @@ public class ShopScript : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void exitGame(){
+        SceneManager.LoadScene("Start");
+    }
+
+    public void infoScreen(){
+        infoPanel.SetActive(true);
+        infoExitButton.SetActive(true);
+        infoExitButtonBG.SetActive(true);
+
+    }
+    public void exitInfoScreen(){
+        infoPanel.SetActive(false);
+        infoExitButton.SetActive(false);
+        infoExitButtonBG.SetActive(false);
     }
 }

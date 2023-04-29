@@ -59,6 +59,17 @@ System.Random rnd = new System.Random();
     // Update is called once per frame
     void Update()
     {
+        //Checking free squares
+        /*for(int i=0; i<ducks.Count; i++){
+            for(int j=0; j<tiles.Length; j++){
+                if (ducks[i].transform.position.x == tiles[j].transform.position.x && ducks[i].transform.position.z == tiles[j].transform.position.z){
+                    tiles[j].GetComponent<TileScript>().setTaken(true);
+                }else{
+                    tiles[j].GetComponent<TileScript>().setTaken(false);
+                }
+            }
+        }*/
+        
         Ray ray;
         RaycastHit hit;
         ray = cam.ScreenPointToRay(Input.mousePosition); // Ray will be sent out from where your mouse is located
@@ -196,6 +207,13 @@ System.Random rnd = new System.Random();
                     }
                     if(hit.transform.gameObject.layer == 6){
                         Destroy(hit.transform.gameObject);
+                        ducks.Remove(hit.transform.gameObject);
+                        for(int i = 0; i< tiles.Length; i++){
+                             if (hit.transform.position.x == tiles[i].transform.position.x && hit.transform.position.z == tiles[i].transform.position.z){
+                                 tiles[i].GetComponent<TileScript>().setTaken(false);
+                                 break;
+                             }
+                         }
                         removeDefense = false;
                     }
                 }
