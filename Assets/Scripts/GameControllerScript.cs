@@ -69,7 +69,7 @@ System.Random rnd = new System.Random();
                 }
             }
         }*/
-        
+
         Ray ray;
         RaycastHit hit;
         ray = cam.ScreenPointToRay(Input.mousePosition); // Ray will be sent out from where your mouse is located
