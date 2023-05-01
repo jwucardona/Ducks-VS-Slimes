@@ -221,6 +221,33 @@ System.Random rnd = new System.Random();
         }
     }
 
+    public void deadDuck(DuckUnit duck, float x, float z)
+    {
+        List<SlimeUnit> attackers = duck.getAttackers();
+        for (int i = 0; i < tiles.Length; i++)
+        {
+            if (x == tiles[i].transform.position.x && z == tiles[i].transform.position.z)
+            {
+                tiles[i].GetComponent<TileScript>().setTaken(false);
+                break;
+            }
+        }
+        for (int i = 0; i < ducks.Count; i++)
+        {
+            if (x == ducks[i].transform.position.x && z == ducks[i].transform.position.z)
+            {
+                Destroy(ducks[i]);
+                for (int j = 0; j < attackers.Count; j++)
+                {
+                    print(attackers[j]);
+                    attackers[j].defeatedDuck();
+                }
+                ducks.RemoveAt(i);
+                break;
+            }
+        }
+    }
+
      void setStart(TileScript start){
          this.start = start;
      }

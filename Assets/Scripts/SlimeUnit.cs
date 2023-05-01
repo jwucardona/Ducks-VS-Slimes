@@ -10,6 +10,7 @@ public class SlimeUnit : AbstractUnit
     public float speed;
     private Vector3 spawn;
     private bool isStopped;
+    private bool attackVariable, attackInProgress;
 
     public Face faces;
     public GameObject SmileBody;
@@ -22,6 +23,10 @@ public class SlimeUnit : AbstractUnit
     private Material faceMaterial;
     private Vector3 destination;
     private AbstractUnit currTarget;
+
+    private DuckUnit duckTarget;
+
+    private float timer = 0;
 
     // Constructor
     public SlimeUnit(int hp, int dmg, float speed) : base(hp, dmg)
@@ -56,6 +61,8 @@ public class SlimeUnit : AbstractUnit
     {
         //originPos = transform.position;
         faceMaterial = SmileBody.GetComponent<Renderer>().materials[1];
+        attackVariable = false;
+        attackInProgress = false;
     }
 
     public void Idle()
@@ -72,14 +79,33 @@ public class SlimeUnit : AbstractUnit
         // if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
         //StopAgent();
         //SetFace(faces.attackFace);
-        animator.SetBool("Attack", true);
+        attackVariable = false;
+        if (duckTarget != null)
+        {
+            animator.SetBool("Attack", true);
+            duckTarget.TakeDamageForDucks(damage, this);
+            //yield return new WaitForSeconds(5f);
+            //animator.SetBool("Attack", false);
+            attackVariable = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 6 || other.tag == "Duck"){
             isStopped = true;
             print("Slime hit duck");
+            duckTarget = other.gameObject.GetComponent<DuckUnit>();
         }
+    }
+
+    public void defeatedDuck()
+    {
+        print(this + " DEFEATEDDUCK");
+        isStopped = false;
+        attackVariable = false;
+        duckTarget = null;
+        //StopCoroutine(Attack());
+        print("Slime defeated duck");
     }
 
     public void slowDown()
@@ -92,17 +118,28 @@ public class SlimeUnit : AbstractUnit
     {
         if (!isStopped){
             transform.Translate(new Vector3(0, 0, speed * 1));
+            attackInProgress = false;
             Idle();
         }
-        else{
-           Attack();
+        else if (!attackInProgress) {
+            print("starting new attack");
+            attackVariable = true;
+            attackInProgress = true;
         }
-        
+
+        timer += Time.deltaTime;
+        if (attackVariable && timer > 5f)
+        {
+            Attack();
+            print(timer);
+            timer = 0;
+        }
+
 
         // switch (currentState)
         // {
         //     case AnimationState.Idle:
-                
+
         //         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
         //         StopAgent();
         //         SetFace(faces.Idleface);
@@ -126,11 +163,11 @@ public class SlimeUnit : AbstractUnit
         //             //transform.rotation = Quaternion.identity;
         //             currentState = AnimationState.Idle;
         //         }
-                   
-            
+
+
         //         // set Speed parameter synchronized with agent root motion moverment
         //         animator.SetFloat("Speed", agent.velocity.magnitude);
-                
+
 
         //         break;
 
@@ -169,8 +206,12 @@ public class SlimeUnit : AbstractUnit
 
         //         //Debug.Log("Take Damage");
         //         break;
-       
+
         // }
 
+    }
+    public override void die()
+    {
+        Destroy(gameObject);
     }
 }
