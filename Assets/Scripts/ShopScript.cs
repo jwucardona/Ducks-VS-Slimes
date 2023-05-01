@@ -26,6 +26,8 @@ public class ShopScript : MonoBehaviour
     public GameObject BRFrame;
     public GameObject shovelFrame;
 
+    public GameObject blackoutPanel;
+
     private static GameObject currDefense;
     public GameObject bubbleShooter;
     public GameObject bubbleDuck;
@@ -54,6 +56,7 @@ public class ShopScript : MonoBehaviour
         infoPanel.SetActive(false);
         infoExitButton.SetActive(false);
         infoExitButtonBG.SetActive(false);
+        blackoutPanel.SetActive(false);
 
     }
 
@@ -289,11 +292,13 @@ public class ShopScript : MonoBehaviour
         infoPanel.SetActive(true);
         infoExitButton.SetActive(true);
         infoExitButtonBG.SetActive(true);
+        blackoutPanel.SetActive(true);
 
     }
     public void exitInfoScreen(){
         infoPanel.SetActive(false);
         infoExitButton.SetActive(false);
         infoExitButtonBG.SetActive(false);
+        blackoutPanel.SetActive(false);
     }
 }
