@@ -100,7 +100,7 @@ public class SlimeUnit : AbstractUnit
 
     public void defeatedDuck()
     {
-        print(this + " DEFEATEDDUCK");
+        //print(this + " DEFEATEDDUCK");
         isStopped = false;
         attackVariable = false;
         duckTarget = null;
@@ -122,7 +122,7 @@ public class SlimeUnit : AbstractUnit
             Idle();
         }
         else if (!attackInProgress) {
-            print("starting new attack");
+            //print("starting new attack");
             attackVariable = true;
             attackInProgress = true;
         }
@@ -131,7 +131,7 @@ public class SlimeUnit : AbstractUnit
         if (attackVariable && timer > 5f)
         {
             Attack();
-            print(timer);
+            //print(timer);
             timer = 0;
         }
 
