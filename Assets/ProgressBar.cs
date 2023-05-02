@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-/*
+
 public class ProgressBar : MonoBehaviour
 {
     private static ProgressBar thePB;
@@ -16,9 +16,9 @@ public class ProgressBar : MonoBehaviour
 		float value = 0.0f;
         while (value<=100.0f)
 		{
-			yield return new WaitForSeconds(1.0f);
+			yield return new WaitForSeconds(1.2f);
 			UpdateSlider(value);
-			value += 10.0f;
+			value += 1.0f;
 		}
     }
     public void UpdateSlider(float value)
@@ -30,4 +30,4 @@ public class ProgressBar : MonoBehaviour
     {
         
     }
-}*/
+}
