@@ -7,7 +7,7 @@ public class AbstractUnit : MonoBehaviour
     // Declare the variables
     public int health;
     public int damage;
-
+    public ProgressBar pb;
     protected GameControllerScript gc;
 
     // Constructor
@@ -20,6 +20,8 @@ public class AbstractUnit : MonoBehaviour
 
     public void TakeDamage(int dmg)
     {
+        pb = new ProgressBar();
+        pb.UpdateSlider(dmg);
         gc = GameControllerScript.getInstance();
         health -= dmg;
         if (health <= 0)

@@ -50,7 +50,7 @@ public class SpawnCurrency : MonoBehaviour
      public static void setCurrency(){
         money+=25;
      }
-          void OnTriggerEnter(Collider collision)
+    void OnTriggerEnter(Collider collision)
      {
         if(collision.tag == "WaterDrop")
         {
