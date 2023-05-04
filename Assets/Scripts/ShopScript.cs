@@ -305,7 +305,7 @@ public class ShopScript : MonoBehaviour
     }
 
     public void exitGame(){
-        SceneManager.LoadScene("Start");
+        Application.Quit();
     }
 
     public void infoScreen(){

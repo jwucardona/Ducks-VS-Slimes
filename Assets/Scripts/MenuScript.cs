@@ -8,4 +8,8 @@ public class MenuScript : MonoBehaviour
     public void playGame(){
         SceneManager.LoadScene("Instructions");
     }
+    public void exitGame(){
+        Application.Quit();
+    }
+
 }
