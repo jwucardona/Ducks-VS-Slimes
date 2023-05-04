@@ -7,6 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class ShopScript : MonoBehaviour
 {
+    private float drMoodTimer = 0;
+    public GameObject speechBubble;
+    public GameObject drMood;
+    public TMP_Text drMoodText;
+
     public TMP_Text sunCounter;
     public GameObject BSPanel;
     public GameObject BDPanel;
@@ -53,16 +58,31 @@ public class ShopScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        drMoodTimer = 0;
+        speechBubble.SetActive(true);
+        drMood.SetActive(true);
+
         infoPanel.SetActive(false);
         infoExitButton.SetActive(false);
         infoExitButtonBG.SetActive(false);
         blackoutPanel.SetActive(false);
+        SpawnCurrency.money = 100;
+
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(drMoodTimer <= 3){
+        drMoodTimer += Time.deltaTime;
+        }
+        if(drMoodTimer > 3){
+            speechBubble.SetActive(false);
+            drMood.SetActive(false);
+            drMoodText.text = " ";
+        }
         sunCounter.text = SpawnCurrency.money.ToString();
 
         BSFrame.SetActive(false);
