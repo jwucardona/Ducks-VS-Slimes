@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameControllerScript : MonoBehaviour
@@ -36,8 +37,7 @@ public class GameControllerScript : MonoBehaviour
     List<GameObject> enemyPrefabList = new List<GameObject>();
 
     public void GameOver(){
-        // make game over?
-        print("Game Over");
+        SceneManager.LoadScene("End");
     }
 
     // Start is called before the first frame update
