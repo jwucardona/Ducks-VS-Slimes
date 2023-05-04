@@ -260,7 +260,12 @@ public class GameControllerScript : MonoBehaviour
         }
     }
 
-     void setStart(TileScript start){
+    public void deadSlime()
+    {
+        es.deadSlime();
+    }
+
+    void setStart(TileScript start){
          this.start = start;
      }
 

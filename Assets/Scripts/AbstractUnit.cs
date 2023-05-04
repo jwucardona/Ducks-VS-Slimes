@@ -9,7 +9,7 @@ public class AbstractUnit : MonoBehaviour
     public int damage;
     //public ProgressBar pb;
     protected GameControllerScript gc;
-    protected EnemySpawner es;
+    //protected EnemySpawner es;
 
     // Constructor
     public AbstractUnit(int hp, int dmg)
@@ -27,7 +27,7 @@ public class AbstractUnit : MonoBehaviour
         health -= dmg;
         if (health <= 0)
         {
-            health = 0;
+            //health = 0;
             die();
             //gc.deadDuck(this.gameObject);
             //Destroy(this.gameObject);

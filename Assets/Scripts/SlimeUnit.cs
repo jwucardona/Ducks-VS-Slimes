@@ -59,7 +59,7 @@ public class SlimeUnit : AbstractUnit
     // Start is called before the first frame update
     void Start()
     {
-        es = EnemySpawner.getInstance();
+        //es = EnemySpawner.getInstance();
         //originPos = transform.position;
         faceMaterial = SmileBody.GetComponent<Renderer>().materials[1];
         attackVariable = false;
@@ -144,7 +144,7 @@ public class SlimeUnit : AbstractUnit
     }
     public override void die()
     {
-        es.deadSlime();
+        gc.deadSlime();
         print(this);
         //print("test1");
         Destroy(this.gameObject);
