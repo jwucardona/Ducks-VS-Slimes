@@ -25,6 +25,8 @@ public class GameControllerScript : MonoBehaviour
     public static bool shopActive = false;
     public static bool removeDefense = false;
 
+    public EnemySpawner es;
+
     private static GameControllerScript theGameController;
 
     public static GameControllerScript getInstance()
@@ -37,6 +39,7 @@ public class GameControllerScript : MonoBehaviour
     List<GameObject> enemyPrefabList = new List<GameObject>();
 
     public void GameOver(){
+        // make game over?
         SceneManager.LoadScene("End");
     }
 
@@ -222,6 +225,11 @@ public class GameControllerScript : MonoBehaviour
                     }
                 }
             }
+        }
+
+        if (es.getSlimesAreDead())
+        {
+            GameOver();
         }
     }
 

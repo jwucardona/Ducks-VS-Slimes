@@ -19,17 +19,24 @@ public class BubbleBomb : DuckUnit
     {
         checkCol = false;
         bombParticles.SetActive(true);
+        print(toKill.Count + " slimes in range");
         for(int i = 0; i < toKill.Count; i++)
         {
             //toKill[i].GetComponent<Renderer>().material.color = Color.black;
             if(toKill[i] != null)
-                Destroy(toKill[i].gameObject);
+            {
+                //Destroy(toKill[i].gameObject);
+                AbstractUnit slimeTarget = toKill[i].GetComponentInParent<AbstractUnit>();
+                slimeTarget.TakeDamage(2000);
+                toKill.RemoveAt(i);
+                //toKill[i].die();
+            }
         }
         yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
     }
     bool checkCol = true;
-    int count = 0;
+    //int count = 0;
     List<SlimeUnit> toKill = new List<SlimeUnit>();
     void OnTriggerEnter(Collider col)
     {

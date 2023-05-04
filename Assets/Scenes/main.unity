@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17740151, g: 0.22209351, b: 0.30431652, a: 1}
+  m_IndirectSpecularColor: {r: 0.17740184, g: 0.22209422, b: 0.30431747, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1064,7 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 895dbc90fbea70740a22c5de622bae38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: 0
+  level: 1
   slimesPrefabs:
   - {fileID: 6705402075998324148, guid: d941199d4a58fcb45adc75ea8e37c42c, type: 3}
   - {fileID: 6688149642241925542, guid: 11eed2dfd1329ab4db9e7f27b8e628b7, type: 3}
@@ -1072,7 +1072,6 @@ MonoBehaviour:
   - {fileID: 873531700701352353, guid: 28d0a30d6aed6fc4c8ca473413f70c24, type: 3}
   location: 
   slimesAreDead: 0
-  enemies: []
 --- !u!1001 &110692071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18618,6 +18617,7 @@ MonoBehaviour:
   temp: []
   path: []
   cam: {fileID: 679711636}
+  es: {fileID: 104390685}
 --- !u!4 &1811176551
 Transform:
   m_ObjectHideFlags: 0

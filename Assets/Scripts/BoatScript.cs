@@ -12,7 +12,10 @@ public class BoatScript : MonoBehaviour
         if (other.gameObject.layer == 7)
         {
             // when we add in damage for the slimes, change this to do other.Kill() or other.TakeDamage()
-            Destroy(other.gameObject);
+            other.GetComponentInParent<AbstractUnit>().TakeDamage(2000);
+            //slimeTarget.TakeDamage(2000);
+            //other.gameObject.GetComponent<SlimeUnit>().die();
+            //Destroy(other.gameObject);
             active = true;
         }
         if (other.gameObject.layer == 10)

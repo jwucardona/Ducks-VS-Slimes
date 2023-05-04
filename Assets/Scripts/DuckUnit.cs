@@ -24,7 +24,7 @@ public class DuckUnit : AbstractUnit
     // Start is called before the first frame update
     void Start()
     {
-        
+        //es = EnemySpawner.getInstance();
     }
 
     // Update is called once per frame

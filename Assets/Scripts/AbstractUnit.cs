@@ -9,6 +9,7 @@ public class AbstractUnit : MonoBehaviour
     public int damage;
     //public ProgressBar pb;
     protected GameControllerScript gc;
+    protected EnemySpawner es;
 
     // Constructor
     public AbstractUnit(int hp, int dmg)
