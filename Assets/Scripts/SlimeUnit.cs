@@ -95,6 +95,7 @@ public class SlimeUnit : AbstractUnit
             duckTarget = other.gameObject.GetComponent<DuckUnit>();
         }
         if (other.gameObject.layer == 3) {
+            EndScript.Lose();
             other.gameObject.GetComponent<GameControllerScript>().GameOver();
         }
     }

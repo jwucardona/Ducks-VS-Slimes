@@ -39,7 +39,6 @@ public class GameControllerScript : MonoBehaviour
     List<GameObject> enemyPrefabList = new List<GameObject>();
 
     public void GameOver(){
-        // make game over?
         SceneManager.LoadScene("End");
     }
 
@@ -229,6 +228,7 @@ public class GameControllerScript : MonoBehaviour
 
         if (es.getSlimesAreDead())
         {
+            EndScript.Win();
             GameOver();
         }
     }
