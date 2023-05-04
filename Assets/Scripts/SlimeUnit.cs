@@ -84,8 +84,6 @@ public class SlimeUnit : AbstractUnit
         {
             animator.SetBool("Attack", true);
             duckTarget.TakeDamageForDucks(damage, this);
-            //yield return new WaitForSeconds(5f);
-            //animator.SetBool("Attack", false);
             attackVariable = true;
         }
     }
@@ -93,8 +91,10 @@ public class SlimeUnit : AbstractUnit
     private void OnTriggerEnter(Collider other){
         if (other.gameObject.layer == 6 || other.tag == "Duck"){
             isStopped = true;
-            print("Slime hit duck");
             duckTarget = other.gameObject.GetComponent<DuckUnit>();
+        }
+        if (other.gameObject.layer == 3) {
+            other.gameObject.GetComponent<GameControllerScript>().GameOver();
         }
     }
 
@@ -110,7 +110,7 @@ public class SlimeUnit : AbstractUnit
 
     public void slowDown()
     {
-        speed = 0.005f;
+        speed = 0.0025f;
     }
 
     // Update is called once per frame
@@ -134,80 +134,10 @@ public class SlimeUnit : AbstractUnit
             //print(timer);
             timer = 0;
         }
-
-
-        // switch (currentState)
-        // {
-        //     case AnimationState.Idle:
-
-        //         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) return;
-        //         StopAgent();
-        //         SetFace(faces.Idleface);
-        //         break;
-
-        //     case AnimationState.Walk:
-
-        //         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Walk")) return;
-
-        //         agent.isStopped = false;
-        //         agent.updateRotation = true;
-
-        //         agent.SetDestination(originPos);
-        //         // Debug.Log("WalkToOrg");
-        //         SetFace(faces.WalkFace);
-        //         // agent reaches the destination
-        //         if (agent.remainingDistance < agent.stoppingDistance)
-        //         {
-        //             // walkType = WalkType.Patroll;
-        //             //facing to camera
-        //             //transform.rotation = Quaternion.identity;
-        //             currentState = AnimationState.Idle;
-        //         }
-
-
-        //         // set Speed parameter synchronized with agent root motion moverment
-        //         animator.SetFloat("Speed", agent.velocity.magnitude);
-
-
-        //         break;
-
-        //     // case SlimeAnimationState.Jump:
-
-        //     //     if (animator.GetCurrentAnimatorStateInfo(0).IsName("Jump")) return;
-
-        //     //     StopAgent();
-        //     //     SetFace(faces.jumpFace);
-        //     //     animator.SetTrigger("Jump");
-
-        //     //     //Debug.Log("Jumping");
-        //     //     break;
-
-        //     case AnimationState.Attack:
-
-        //         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack")) return;
-        //         StopAgent();
-        //         SetFace(faces.attackFace);
-        //         animator.SetTrigger("Attack");
-
-        //        // Debug.Log("Attacking");
-
-        //         break;
-        //     case AnimationState.Damage:
-
-        //        // Do nothing when animtion is playing
-        //        if(animator.GetCurrentAnimatorStateInfo(0).IsName("Damage0")
-        //             || animator.GetCurrentAnimatorStateInfo(0).IsName("Damage1")
-        //             || animator.GetCurrentAnimatorStateInfo(0).IsName("Damage2") ) return;
-
-        //         StopAgent();
-        //         animator.SetTrigger("Damage");
-        //         animator.SetInteger("DamageType", damType);
-        //         SetFace(faces.damageFace);
-
-        //         //Debug.Log("Take Damage");
-        //         break;
-
-        // }
+        if (attackVariable && timer > 2f)
+        {
+            Idle();
+        }
 
     }
     public override void die()

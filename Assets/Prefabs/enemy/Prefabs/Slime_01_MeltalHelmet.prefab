@@ -149,8 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 551
   damage: 100
-  pb: {fileID: 0}
-  speed: 0.003
+  speed: 0.005
   faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
   SmileBody: {fileID: 6080307935716506405}
   animator: {fileID: 3715040245419621482}
@@ -169,7 +168,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 551
   damage: 100
-  pb: {fileID: 0}
   speed: 4.7
   faces: {fileID: 11400000, guid: 8b8a7554fceb39841840f45a2d8da540, type: 2}
   SmileBody: {fileID: 6080307935716506405}

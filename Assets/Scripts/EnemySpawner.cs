@@ -10,6 +10,9 @@ public class EnemySpawner : MonoBehaviour
     public List<Slime> slimes;
     public List<GameObject> slimesPrefabs;
     public string location; // location of the text file that holds the slimes
+    public bool slimesAreDead = false; // if all the slimes are dead, then the level is over
+    public List<GameObject> enemies;
+
     // list of enemies on the level currently
 
     // Start is called before the first frame update
@@ -34,6 +37,7 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         slimes = new List<Slime>();
+        enemies = new List<GameObject>();
         level = 1;
         // read in from a textfile that holds the slimes based on the level
         // slimes = new List<Slime>();
@@ -45,6 +49,14 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemies.Count == 0)
+        {
+            slimesAreDead = true;
+        }
+        else
+        {
+            slimesAreDead = false;
+        }
         if (slimes != null)
         {
             foreach (Slime slime in slimes)
@@ -55,7 +67,9 @@ public class EnemySpawner : MonoBehaviour
                     {
                         slime.Spawner = Random.Range(0, transform.childCount);
                     }
-                    Instantiate(slimesPrefabs[(int)slime.slimeType], new Vector3(transform.GetChild(slime.Spawner).transform.position.x, 1f, transform.GetChild(slime.Spawner).transform.position.z), transform.rotation * Quaternion.Euler(0f, 270f, 0f));
+                    GameObject tempSlime = slimesPrefabs[(int)slime.slimeType];
+                    Instantiate(tempSlime, new Vector3(transform.GetChild(slime.Spawner).transform.position.x, 1f, transform.GetChild(slime.Spawner).transform.position.z), transform.rotation * Quaternion.Euler(0f, 270f, 0f));
+                    enemies.Add(tempSlime);
                     slime.isSpawned = true;
                 }
             }

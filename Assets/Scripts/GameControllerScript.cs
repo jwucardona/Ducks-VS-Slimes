@@ -31,10 +31,14 @@ public class GameControllerScript : MonoBehaviour
         return theGameController;
     }
 
-System.Random rnd = new System.Random();
+    System.Random rnd = new System.Random();
 
     List<GameObject> enemyPrefabList = new List<GameObject>();
 
+    public void GameOver(){
+        // make game over?
+        print("Game Over");
+    }
 
     // Start is called before the first frame update
     void Start()
